@@ -1,1 +1,1 @@
-web: python indianbanks/manage.py runserver
+web: python indianbanks/manage.py runserver 0.0.0.0:5000

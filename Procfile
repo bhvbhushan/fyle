@@ -1,0 +1,1 @@
+web python indianbanks/manage.py runserver

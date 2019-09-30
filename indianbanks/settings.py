@@ -25,7 +25,7 @@ SECRET_KEY = '2p*ax_as$t8odlb%prfz(a@_=*8_=7p=i@eu0etpd!f%vys_h9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['indianbankssearch.herokuapp.com']
 
 
 # Application definition

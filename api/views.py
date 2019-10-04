@@ -15,7 +15,7 @@ class ListBankView(generics.ListAPIView):
 class IFSCBankSearch(generics.RetrieveAPIView):
     queryset = BankBranches.objects.all()
     serializer_class = BankSerializer
-    filterset_fields = ['ifsc']
+    filterset_fields = 'ifsc'
 
     # def get(self, request, *args, **kwargs):
     #     try:

@@ -15,18 +15,19 @@ class ListBankView(generics.ListAPIView):
 class IFSCBankSearch(generics.RetrieveAPIView):
     queryset = BankBranches.objects.all()
     serializer_class = BankSerializer
+    filterset_fields = ['ifsc']
 
-    def get(self, request, *args, **kwargs):
-        try:
-            bank = self.queryset.get(pk=kwargs["pk"])
-            return Response(BankSerializer(bank).data)
-        except BankBranches.DoesNotExist:
-            return Response(
-                data = {
-                    "message": "Bank with IFSC Code: {} does not exist".format(kwargs["pk"])
-                },
-                status = status.HTTP_404_NOT_FOUND
-            )
+    # def get(self, request, *args, **kwargs):
+    #     try:
+    #         bank = self.queryset.get(pk=kwargs["pk"])
+    #         return Response(BankSerializer(bank).data)
+    #     except BankBranches.DoesNotExist:
+    #         return Response(
+    #             data = {
+    #                 "message": "Bank with IFSC Code: {} does not exist".format(kwargs["pk"])
+    #             },
+    #             status = status.HTTP_404_NOT_FOUND
+    #         )
 
 class CityOrNameBankSearch(generics.ListAPIView):
     queryset = BankBranches.objects.all()
